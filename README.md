@@ -66,17 +66,11 @@ Standard output will look like the following when the script executes and comple
 ## Output files
 One output file will be written for each LTM config in the **configs/LTM/** directory. The output files will be formated as CSV files and will be written to the **outputs/** directory with the following columns ordered from right to left.
 
-**VS Names (column A):** contains all Virtual Server names that are associated with a given Internal VIP address.
-
-**IP Address(int) (column B):** contains internal VIP address taken from the LTM config.
-
-**IP Address(ext) (column C):** contains external address associated with the internal VIP address. This info is taken from the GTM config.
-
-**VS Ports (column D):** contains all VIP ports associated with a given VIP address.
-
-**FQDNs from Zone Files (column E):** contains all FQDN (A or CNAME) records associated with a given VIP address from all DNS zone files in **configs/zonefiles/**.
-
-**WideIPs from GTM config (column F):** contains all wideip names and aliases associated with a given VIP address from all GTM config files in **configs/gtm/**.
-
-**VS Descriptions (column G):** contains all description text taken from all virtual servers associated with the given internal VIP address (column B). Information is taken from LTM config files in **configs/ltm/**.
+**VS Names (column A):** contains all Virtual Server names that are associated with a given Internal VIP address.  
+**IP Address(int) (column B):** contains internal VIP address taken from the LTM config.  
+**IP Address(ext) (column C):** contains external address associated with the internal VIP address. This info is taken from the GTM config.  
+**VS Ports (column D):** contains all VIP ports associated with a given VIP address.  
+**FQDNs from Zone Files (column E):** contains all FQDN (A or CNAME) records associated with a given VIP address from all DNS zone files in **configs/zonefiles/**.  
+**WideIPs from GTM config (column F):** contains all wideip names and aliases associated with a given VIP address from all GTM config files in **configs/gtm/**.  
+**VS Descriptions (column G):** contains all description text taken from all virtual servers associated with the given internal VIP address (column B). Information is taken from LTM config files in **configs/ltm/**.  
 
