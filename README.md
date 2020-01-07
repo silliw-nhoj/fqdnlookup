@@ -35,10 +35,10 @@ The directories must be created and required GTM configs, LTM configs, and DNS z
 
 **Note:** if the directory names are different than those shown above, the path variables in the script (lines 9-12) must be modified to reflect the new relative paths.
 ```
-    my $zonefilePath = "configs/zonefiles/";
-    my $gtmfilePath = "configs/gtm/";
-    my $ltmfilePath = "configs/ltm/";
-    my $outputPath = "outputs/";
+my $zonefilePath = "configs/zonefiles/";
+my $gtmfilePath = "configs/gtm/";
+my $ltmfilePath = "configs/ltm/";
+my $outputPath = "outputs/";
 ```
 ## Usage
 From the directory containing the script, execute the script.
