@@ -1,5 +1,5 @@
 # FQDN Lookup
-The objective of this script is to parse DNS zone files, GTM configs, and LTM configs to correlate LTM VIP addresses with FQDNs (A and CNAME) from the zone files and (wideips and aliases) GTM configs.
+The objective of this script is to parse DNS zone files, GTM configs, and LTM configs to correlate LTM VIP addresses with FQDNs (A and CNAME) from the zone files as well as wideips and aliases from GTM configs.
 
 ## Requirements
 
