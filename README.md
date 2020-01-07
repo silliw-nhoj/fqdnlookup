@@ -8,11 +8,11 @@ The file must be run on a linux host which can be a BIG-IP device.
 
 ### Directory structure 
 The directory structure must contain the following directories relative to the location of the script.
-  1. configs: Contains directories for the GTM configs, LTM configs, and DNS zonefiles.
-      - gtm: Directory for one or more bigip_gtm.conf files
-      - ltm: Directory for one or more LTM bigip.conf files
-      - zonefiles: Directory for one or more DNS zone files
-  2. outputs: Directory where the output CSV files will be written
+  1. **configs**: Contains directories for the GTM configs, LTM configs, and DNS zonefiles.
+      - **gtm**: Directory for one or more bigip_gtm.conf files
+      - **ltm**: Directory for one or more LTM bigip.conf files
+      - **zonefiles**: Directory for one or more DNS zone files
+  2. **outputs**: Directory where the output CSV files will be written
   
   ```
     .
