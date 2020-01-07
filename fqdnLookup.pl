@@ -19,8 +19,8 @@ my $outputPath = "outputs/";
 &csv_Output;
 
 ########### Subroutines ##############
-# get A and CNAME records from zonefiles
 
+# get A and CNAME records from zonefiles
 sub readZonefiles {
   opendir my $dir, $zonefilePath or die "Cannot open directory: $!";
   my @files = readdir $dir;
@@ -49,11 +49,8 @@ sub readZonefiles {
         $zones{$zone}{$type}{$answer}{names}{$name}{name} = $name;
         $zones{$zone}{$type}{$answer}{names}{$name}{fqdn} = $name . "." . $zone;
       }
-
     }
-
   }
-  
   closedir $dir;
 }
 
@@ -204,7 +201,6 @@ sub assembleGTMobjects {
   }
 }
 
-
 # get VS info from LTM configs
 sub readLTMConfig {
   opendir my $dir, $ltmfilePath or die "Cannot open directory: $!";
@@ -230,8 +226,6 @@ sub readLTMConfig {
           $desc =~ s/[\r\n]$//;
           $desc =~ s/\s+$//;
           $desc =~ s/[\"\,]//g;
-
-          
         }
         if (/^\s{3,4}destination (?:\/Common\/|)(.*):(.*)/) {
           $addr = $1;
