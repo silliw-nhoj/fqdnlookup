@@ -8,11 +8,11 @@ The file must be run on a linux host which can be a BIG-IP device.
 
 ### Directory structure 
 The directory structure must contain the following directories relative to the location of the script.
-  1. configs: Contains directories for the GTM configs, LTM configs, and DNS zonefiles.
-      - gtm: Directory for one or more bigip_gtm.conf files
-      - ltm: Directory for one or more LTM bigip.conf files
-      - zonefiles: Directory for one or more DNS zone files
-  2. outputs: Directory where the output CSV files will be written
+  1. **configs**: Contains directories for the GTM configs, LTM configs, and DNS zonefiles.
+      - **gtm**: Directory for one or more bigip_gtm.conf files
+      - **ltm**: Directory for one or more LTM bigip.conf files
+      - **zonefiles**: Directory for one or more DNS zone files
+  2. **outputs**: Directory where the output CSV files will be written
   
   ```
     .
@@ -35,10 +35,10 @@ The directories must be created and required GTM configs, LTM configs, and DNS z
 
 **Note:** if the directory names are different than those shown above, the path variables in the script (lines 9-12) must be modified to reflect the new relative paths.
 ```
-    my $zonefilePath = "configs/zonefiles/";
-    my $gtmfilePath = "configs/gtm/";
-    my $ltmfilePath = "configs/ltm/";
-    my $outputPath = "outputs/";
+my $zonefilePath = "configs/zonefiles/";
+my $gtmfilePath = "configs/gtm/";
+my $ltmfilePath = "configs/ltm/";
+my $outputPath = "outputs/";
 ```
 ## Usage
 From the directory containing the script, execute the script.
@@ -66,17 +66,11 @@ Standard output will look like the following when the script executes and comple
 ## Output files
 One output file will be written for each LTM config in the **configs/LTM/** directory. The output files will be formated as CSV files and will be written to the **outputs/** directory with the following columns ordered from right to left.
 
-**VS Names (column A):** contains all Virtual Server names that are associated with a given Internal VIP address.
-
-**IP Address(int) (column B):** contains internal VIP address taken from the LTM config.
-
-**IP Address(ext) (column C):** contains external address associated with the internal VIP address. This info is taken from the GTM config.
-
-**VS Ports (column D):** contains all VIP ports associated with a given VIP address.
-
-**FQDNs from Zone Files (column E):** contains all FQDN (A or CNAME) records associated with a given VIP address from all DNS zone files in **configs/zonefiles/**.
-
-**WideIPs from GTM config (column F):** contains all wideip names and aliases associated with a given VIP address from all GTM config files in **configs/gtm/**.
-
-**VS Descriptions (column G):** contains all description text taken from all virtual servers associated with the given internal VIP address (column B). Information is taken from LTM config files in **configs/ltm/**.
+**VS Names (column A):** contains all Virtual Server names that are associated with a given Internal VIP address.  
+**IP Address(int) (column B):** contains internal VIP address taken from the LTM config.  
+**IP Address(ext) (column C):** contains external address associated with the internal VIP address. This info is taken from the GTM config.  
+**VS Ports (column D):** contains all VIP ports associated with a given VIP address.  
+**FQDNs from Zone Files (column E):** contains all FQDN (A or CNAME) records associated with a given VIP address from all DNS zone files in **configs/zonefiles/**.  
+**WideIPs from GTM config (column F):** contains all wideip names and aliases associated with a given VIP address from all GTM config files in **configs/gtm/**.  
+**VS Descriptions (column G):** contains all description text taken from all virtual servers associated with the given internal VIP address (column B). Information is taken from LTM config files in **configs/ltm/**.  
 
