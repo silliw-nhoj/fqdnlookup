@@ -39,6 +39,12 @@ sub readZonefiles {
         $zone = lc $1;
         print "# Reading zone info for $zone\n";
       }
+      # read zone info from bind zone file
+      if (/^\$ORIGIN\s+(.*)\./) {
+        $zone = lc $1 . "(external)";
+        print "# Reading zone info for $zone\n";
+      }
+
       # get A and CNAME records
       if (/^(?:(\S+)|)(?:\s+|\t+)(?:\[\S+\](?:\s+|\t+)|)(?:\S+(?:\s+|\t+|)|)(A|CNAME)(?:\s+|\t+)(\S+)/) {
         $name = lc $1 if ($1);
@@ -50,6 +56,7 @@ sub readZonefiles {
         $zones{$zone}{$type}{$answer}{names}{$name}{fqdn} = $name . "." . $zone;
       }
     }
+    $zone = ();
   }
   closedir $dir;
 }
@@ -240,6 +247,7 @@ sub readLTMConfig {
           push (@{$ltmConfigs{$file}{virtuals}{$addr}{vsNames}}, $virtualName);
           push (@{$ltmConfigs{$file}{virtuals}{$addr}{ports}}, $2);
           push (@{$ltmConfigs{$file}{virtuals}{$addr}{descriptions}}, $desc) if ($desc);
+          $desc = ();
         }
         if (/^\s{3,4}ip-forward/) {
           $ltmConfigs{$file}{virtuals}{$addr}{isIPForward} = 1;
